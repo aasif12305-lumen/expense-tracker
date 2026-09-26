@@ -96,4 +96,4 @@ function formatcurrency(number){
 
    updatetransactionlist()
    updatesummary()
-   
+
