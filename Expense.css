@@ -1,0 +1,278 @@
+*{
+  padding:0px;
+  margin: 0px;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color:transparent;
+}
+body{
+  position:relative;
+  font-family:"Poppins",sans-serif ;
+  background:linear-gradient(125deg,#a2c9af,#1c6c44);
+
+  background-position: fixed;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container{
+  
+  background-color: white;
+  margin: 0px 20px;
+  padding: 10px;
+  border-radius:16px;
+  box-shadow: 0 12px 20px rgba(0,0,0,0.15);
+  width: 80%;
+  max-width: 600px;
+}
+.header{ 
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 2rem;
+  padding: 10px;
+}
+.headerbox{
+  background:linear-gradient(90deg,#a2c9af,#1c6c44);;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 12px 20px rgba(0,0,0,0.15);
+}
+.balancebox{
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.popuprelbox{
+  position: relative;
+}
+.baltitle{
+  font-size: 1.5rem;
+  
+}
+#balance{
+  font-size: 2rem;
+  font-weight: 500;
+}
+.box2{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 10px;
+}
+.incometitle{
+  font-size:1rem;
+  font-weight: 500;
+    
+}
+.expencetitle{
+  font-size: 1rem;
+  font-weight: 500;
+  
+}
+#income,#expence{
+  font-size: 1rem;
+  text-align: center;
+}
+@media(max-width:700px){
+  #income,#expence{
+  font-size: 1rem;
+  
+}
+}
+.incomebox,.expencebox{
+  background-color: white;
+  padding: 10px;
+  border-radius: 12px;
+  transition: 0.3s all ease;
+  box-shadow: 0 12px 20px rgba(0,0,0,0.2);
+  
+}
+.expencebox{
+  color: red;
+}
+.expencebox:hover,.incomebox:hover{
+  transform: translateY(-5px);
+}
+.incomebox{
+  color: green;
+}
+.transactionbox{
+  display: grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+}
+.transactionlist{
+  height: 400px;
+  overflow-y: auto;
+  position: relative;
+  
+}
+
+
+.transactionlist::-webkit-scrollbar{
+    width: 8px;
+    
+}
+
+.transactionlist::-webkit-scrollbar-track{
+    background: #f1f1f1;
+}
+
+.transactionlist::-webkit-scrollbar-thumb{
+    background: #bdbdbd;
+    border-radius: 10px;
+}
+
+.transactionlist::-webkit-scrollbar-thumb:hover{
+    background:blue;
+  
+}
+
+.delconfirm{
+  font-weight: 500;
+  color: white;
+  font-size: 1.5rem;
+  padding: 10px;
+  display:none;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  box-shadow:0 10px 12px rgba(0,0,0,0.3);
+  border-radius:10px;
+  height:100%;
+  max-height:400px;
+  width:100%;
+  max-width:500px;
+  position:absolute;
+  z-index:1000;
+  
+  background: linear-gradient(135deg, #d4fc79, #2ecc71);
+  
+}
+
+nav{
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+}
+
+.delconfirm_btn{
+  padding: 10px 20px;
+  
+}
+
+
+.formtitle{
+  text-align: center;
+  margin: 10px 20px;
+}
+.formbox{
+  margin: 20px;
+   padding: 10px;
+    background:#f5f5f5;
+
+
+border-radius: 10px;
+box-shadow: 0 12px 20px rgba(0,0,0,0.3);
+}
+.form{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+input{
+  border:none ;
+  border-radius: 5px;
+  height: 2rem;
+  max-height: 30px;
+    padding:10px;
+    border:1px solid #ccc;
+    outline:none;
+}
+
+input:focus{
+    border-color:#2ecc71;
+    box-shadow:0 0 5px rgba(46,204,113,.4);
+}
+  
+button{
+    background:#16a34a;
+    color:white;
+    cursor:pointer;
+    transition:.3s;
+    border-radius: 5px;
+    border:none;
+    padding: 5px;
+}
+
+button:hover{
+    background:#15803d;
+}
+
+
+
+.Transaction{
+  margin: 20px 0px;
+}
+.libox{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: 15px;
+  border-radius: 10px;
+
+  animation:  0.4s slide ease;
+transition:0.3s transform ease;
+  margin-bottom: 15px;
+}
+.libox:hover{
+    box-shadow: 0px 10px 10px rgba(0,0,0,0.15);
+  transform:translateY(-5px);
+}
+.incometransaction{
+    border-right: 5px solid #2ecc71;
+}
+
+
+.expensetransaction{
+    border-right: 5px solid #e74c3c;
+}
+
+.del_btn{
+    
+    font-weight:bold;
+    transition:0.2s;
+
+  opacity: 0;
+  
+}
+.libox:hover .del_btn{
+  opacity: 1;
+  cursor: pointer;
+}
+@keyframes slide{
+  from{
+    transform: translateX(-20px);
+  }
+  to{
+    transform: translateX(0px);
+  }
+}
+ul{
+  max-height: 400px;
+  overflow-y: auto;
+}
+.del_btn{
+  
+    background-color: #ef4444;
+    color: white;
+
+  border-radius: 5px;
+  padding: 5px;
+  margin:0px 3px ;
+}
+.del_btn:hover{
+    background-color: #dc2626;
+}
